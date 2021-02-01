@@ -1,5 +1,5 @@
-import { NowRequest, NowResponse } from '@vercel/node';
+import { NowResponse } from '@vercel/node';
 
-export default async (req: NowRequest, res: NowResponse) => {
-  res.json({ message: 'hello' });
+export default (res: NowResponse) => {
+  res.json({ message: 'Hello World!' });
 };

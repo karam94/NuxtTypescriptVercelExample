@@ -1,4 +1,12 @@
 # NuxtTypescriptVercelExample
+TODO: Short description of what's in this repo + the vercel.json/nuxt.config.js settings & the build & development settings in the vercel backend.
+https://github.com/nuxt/vercel-builder/tree/main/examples/basic
+
+## Notes
+```bash
+# run both ui & functions locally
+$ npm run dev:local
+```
 
 ## Build Setup
 

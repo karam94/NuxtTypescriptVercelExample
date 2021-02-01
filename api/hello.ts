@@ -1,5 +1,5 @@
-import { NowResponse } from '@vercel/node';
+import { NowRequest, NowResponse } from '@vercel/node';
 
-export default (res: NowResponse) => {
+export default (_: NowRequest, res: NowResponse) => {
   res.json({ message: 'Hello World!' });
 };

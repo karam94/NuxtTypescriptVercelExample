@@ -39,12 +39,12 @@ export default Vue.extend({
 
       this.$axios
         .$get('/api/hello')
-        .then((res) => res.text())
+        .then((res) => res.message)
         .catch((err) => console.log(`${errorMessage} ${err}.`)),
 
       this.$axios
         .$get('/api/contents/omgthisworks')
-        .then((res) => res.text())
+        .then((res) => res.message)
         .catch((err) => console.log(`${errorMessage} ${err}.`)),
     ]);
   },

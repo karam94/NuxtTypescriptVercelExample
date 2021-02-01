@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
+    "dev:local": "vc dev -A vercel.dev.json",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",

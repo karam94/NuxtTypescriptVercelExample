@@ -40,13 +40,19 @@ export default {
   ],
 
   publicRuntimeConfig: {
-    baseURL: `http://${process.env.VERCEL_URL}` || 'http://localhost:3000',
-    envExample: process.env.EXAMPLE_VERCEL_ENV_VAR,
+    baseURL:
+      process.env.VERCEL_ENV === 'development'
+        ? 'http://localhost:3000'
+        : `https://${process.env.VERCEL_URL}`,
+    envExample: process.env.VERCEL_ENV,
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: `http://${process.env.VERCEL_URL}` || 'http://localhost:3000',
+    baseURL:
+      process.env.VERCEL_ENV === 'development'
+        ? 'http://localhost:3000'
+        : `https://${process.env.VERCEL_URL}`,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

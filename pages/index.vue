@@ -33,7 +33,8 @@ export default Vue.extend({
     const errorMessage =
       'Your serverless functions most likely are not running. Use vercel dev instead of npm run dev.';
 
-    console.log(`Env variable: ${process.env.EXAMPLE_VERCEL_ENV_VAR}`);
+    console.log(`Env variable: ${this.$config.envExample}`);
+    console.log(`${this.$config.baseURL}`);
 
     this.contents = await Promise.all([
       // fetch('/api/hello').then((res) => res.text()),

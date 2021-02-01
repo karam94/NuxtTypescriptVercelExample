@@ -31,7 +31,6 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/dotenv',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -40,21 +39,14 @@ export default {
     '@nuxtjs/axios',
   ],
 
+  publicRuntimeConfig: {
+    baseURL: `http://${process.env.VERCEL_URL}` || 'http://localhost:3000',
+    envExample: process.env.EXAMPLE_VERCEL_ENV_VAR,
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:3000', // Used as fallback if no runtime config is provided
-  },
-
-  publicRuntimeConfig: {
-    axios: {
-      browserBaseURL: process.env.BROWSER_BASE_URL,
-    },
-  },
-
-  privateRuntimeConfig: {
-    axios: {
-      baseURL: process.env.BASE_URL,
-    },
+    baseURL: `http://${process.env.VERCEL_URL}` || 'http://localhost:3000',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
